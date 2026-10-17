@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h2>Todo list</h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Write your list..." />
+          <button onclick="addTask()"><span class="btn-text">Add</span></button>
+        </div>
+        <div class="scrollable">
+          <ul id="list-container">
+            <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

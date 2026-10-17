@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: all 0.1s ease-out;
+}
+
+body {
+  background-image: url(images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 10px;
+  width: 100%;
+}
+
+.todo-app {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 540px;
+  padding: 40px 30px 50px;
+  margin: 100px auto 20px;
+  border-radius: 20px;
+  user-select: none;
+  height: 600px;
+}
+
+.todo-app h2 {
+  display: flex;
+  color: #f8f8f8;
+  margin: 0 0 20px 20px;
+  position: relative;
+  text-shadow: 1px 2px 2px black;
+}
+
+.todo-app h2::after {
+  content: "";
+  position: absolute;
+  background-image: url(images/todo-list.png);
+  background-position: center;
+  background-size: 120% 103%;
+  filter: brightness(85%);
+  height: 24px;
+  width: 24px;
+  left: 105px;
+  top: 2px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  border-radius: 30px;
+  background: #8b8b8b;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px black;
+}
+
+input::placeholder {
+  color: #e0e0e0;
+  text-shadow: none;
+}
+
+button {
+  padding: 12px 50px;
+  border-radius: 45px;
+  outline: none;
+  border: none;
+  background: #bbbbbb;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px black;
+}
+
+button .btn-text {
+  display: inline-block;
+  transition: all 0.1s ease-out;
+}
+
+button:hover .btn-text {
+  transform: translateY(-3px);
+  color: #818080;
+  text-shadow: 1px 1px 0 black;
+}
+
+.scrollable {
+  max-height: 410px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: transparent transparent;
+  background: transparent;
+}
+
+.scrollable ::-webkit-scrollbar {
+  display: none;
+}
+
+ul li {
+  list-style: none;
+  padding: 12px 50px 12px 50px;
+  font-size: 15px;
+  color: #f7f7f7;
+  text-shadow: 1px 1px 1px black;
+  user-select: none;
+  cursor: pointer;
+  margin: 15px 5px 15px 5px;
+  border-radius: 30px;
+  position: relative;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+ul li:hover {
+  background: #444444;
+  border-radius: 30px;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/Unchecked.png);
+  background-position: center;
+  background-size: 107% 107%;
+  filter: brightness(45%);
+  height: 29px;
+  width: 29px;
+  border-radius: 50%;
+  left: 10px;
+  top: 6px;
+  align-items: center;
+}
+
+ul li.checked {
+  text-decoration: line-through;
+  color: #555;
+}
+
+ul li.checked::before {
+  background-image: url(images/checked.png);
+  background-position: center;
+  background-size: 110% 110%;
+  filter: brightness(88%);
+  height: 28px;
+  width: 28px;
+}
+ul li span {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #f9f9f9;
+  line-height: 31px;
+  height: 31px;
+  width: 31px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+ul li span:hover {
+  background: #bbbbbb;
+  color: #555;
+}
