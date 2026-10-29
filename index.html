@@ -1,27 +1,55 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="todo-app">
-        <h2>Todo list</h2>
-        <div class="row">
-          <input type="text" id="input-box" placeholder="Write your list..." />
-          <button onclick="addTask()"><span class="btn-text">Add</span></button>
+    <div class="layout">
+      <nav class="sidebar">
+        <p class="sidebar-label">WORKSPACE</p>
+        <button class="nav-btn active" data-filter="all">📋 All Tasks</button>
+        <button class="nav-btn" data-filter="active">⌛ To Do</button>
+        <button class="nav-btn" data-filter="done">✅ Done</button>
+        <button class="nav-btn" data-filter="notes">📝 Notes</button>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <div class="todo-app">
+            <h2 id="page-title">All Tasks</h2>
+            <div class="row">
+              <input
+                type="text"
+                id="input-box"
+                placeholder="Write your list..."
+              />
+              <button onclick="addTask()">
+                <span class="btn-text">Add</span>
+              </button>
+            </div>
+            <div class="scrollable">
+              <ul id="list-container">
+                <!-- <li class="checked">Task 1</li>
+              <li>Task 2</li>
+              <li>Task 3</li> -->
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="scrollable">
-          <ul id="list-container">
-            <!-- <li class="checked">Task 1</li>
-            <li>Task 2</li>
-            <li>Task 3</li> -->
-          </ul>
+
+        <div class="container hidden" id="notes-app">
+          <div class="notes-card">
+            <h2>Notes</h2>
+            <textarea
+              id="notes-box"
+              placeholder="Write your notes here..."
+            ></textarea>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
     <script src="script.js"></script>
   </body>
